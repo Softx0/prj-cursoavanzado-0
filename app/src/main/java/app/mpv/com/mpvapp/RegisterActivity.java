@@ -17,6 +17,7 @@ import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
 import com.google.firebase.auth.FirebaseAuth;
+import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 import com.google.firebase.auth.FirebaseUser;
 
 import org.w3c.dom.Text;
@@ -30,7 +31,7 @@ public class RegisterActivity extends AppCompatActivity{
     //Message error authenticate
     final String MSG_ERROR = "Authenticated Failed.";
     //duration of register
-    private final int DURACION_REGISTRO = 3000; // 3 segundos
+    private final int DURACION_REGISTRO = 2000; // 3 segundos
     //Initialize Views objects
     @BindView(R.id.toolbar)
     Toolbar toolbar;
@@ -94,9 +95,17 @@ public class RegisterActivity extends AppCompatActivity{
                                     Toast.LENGTH_SHORT).show();
                         } else {
                             // If sign in fails, display a message to the user.
-                            Toast.makeText(RegisterActivity.this, MSG_ERROR,
-                                    Toast.LENGTH_SHORT).show();
-                            //TODO progressbar
+
+                            //Si el usuario ya existe
+                            if(task.getException() instanceof FirebaseAuthUserCollisionException){
+                                Toast.makeText(RegisterActivity.this, "Ese usuario ya existe!",
+                                        Toast.LENGTH_SHORT).show();
+                            } else{
+                                Toast.makeText(RegisterActivity.this, MSG_ERROR,
+                                        Toast.LENGTH_SHORT).show();
+                                //TODO progressbar
+                            }
+
                         }
 
                         // ...
@@ -106,7 +115,7 @@ public class RegisterActivity extends AppCompatActivity{
 
 
     @OnClick(R.id.btn_sign_up)
-    public void signIn(View view){
+    public void signUp(View view){
 
         registroUsuario();
 
@@ -119,6 +128,5 @@ public class RegisterActivity extends AppCompatActivity{
                 finish();
             }
         }, DURACION_REGISTRO);
-
     }
 }

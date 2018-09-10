@@ -48,7 +48,7 @@
                 android:textColor="#FFFFFF"
                 android:textColorHighlight="#FFFFFF"
                 android:shadowColor="#FFFFFF"
-
+                android:imeOptions="flagNoExtractUi"
                 android:textColorLink="#FFFFFF"
                 android:hint="Name" />
         </android.support.design.widget.TextInputLayout>
@@ -66,6 +66,7 @@
                 android:layout_height="wrap_content"
                 android:inputType="textEmailAddress"
                 android:textColor="#FFFFFF"
+                android:imeOptions="flagNoExtractUi"
                 android:textColorHint="#FFFFFF"
                 android:hint="Email" />
         </android.support.design.widget.TextInputLayout>
@@ -83,6 +84,7 @@
                 android:layout_height="wrap_content"
                 android:textColorHint="#FFFFFF"
                 android:textColor="#FFFFFF"
+                android:imeOptions="flagNoExtractUi"
                 android:inputType="textPassword"
                 android:hint="Password"/>
         </android.support.design.widget.TextInputLayout>

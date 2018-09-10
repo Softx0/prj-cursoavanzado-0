@@ -52,13 +52,13 @@
                 android:layout_height="wrap_content">
 
                 <EditText
-                    android:id="@+id/userName"
+                    android:id="@+id/emailLogin"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:drawableLeft="@mipmap/login"
                     android:singleLine="true"
-                    android:focusable="false"
-                    android:hint="      User Name"
+                    android:imeOptions="flagNoExtractUi"
+                    android:hint="      Email"
                     android:inputType="textEmailAddress" />
             </android.support.design.widget.TextInputLayout>
 
@@ -67,12 +67,12 @@
                 android:layout_height="wrap_content">
 
                 <EditText
-                    android:id="@+id/password"
+                    android:id="@+id/passwordLogin"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="16dp"
                     android:singleLine="true"
-                    android:focusable="false"
+                    android:imeOptions="flagNoExtractUi"
                     android:drawableLeft="@mipmap/key"
                     android:hint="     Password"
                     android:inputType="textPassword" />
