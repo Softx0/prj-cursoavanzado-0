@@ -1,10 +1,10 @@
 package app.mpv.com.mpvapp;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.view.View;
@@ -20,13 +20,11 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseAuthUserCollisionException;
 import com.google.firebase.auth.FirebaseUser;
 
-import org.w3c.dom.Text;
-
 import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 
-public class RegisterActivity extends AppCompatActivity{
+public class RegisterActivity extends AppCompatActivity {
 
     //Message error authenticate
     final String MSG_ERROR = "Authenticated Failed.";
@@ -68,23 +66,23 @@ public class RegisterActivity extends AppCompatActivity{
         });
     }
 
-    public void registroUsuario(){
+    public void registroUsuario() {
 
         String strEmail = email.getText().toString().trim();
-        String strPassword= password.getText().toString().trim();
+        String strPassword = password.getText().toString().trim();
         final String strUser = user.getText().toString().trim();
 
-        if(TextUtils.isEmpty(strEmail)){
+        if (TextUtils.isEmpty(strEmail)) {
             Toast.makeText(this, "Ingrese un correo valido", Toast.LENGTH_SHORT).show();
-            return;
+
         }
-        if(TextUtils.isEmpty(strPassword) && strPassword.length() < 6){
+        if (TextUtils.isEmpty(strPassword) && strPassword.length() < 8 && strPassword.contains("*")) {
             Toast.makeText(this, "Ingrese una contraseña valida", Toast.LENGTH_SHORT).show();
-            return;
+
         }
 
         //Creado nuevo usuario
-        mAuth.createUserWithEmailAndPassword(strEmail, strPassword)
+        Task<AuthResult> authResultTask = mAuth.createUserWithEmailAndPassword(strEmail, strPassword)
                 .addOnCompleteListener(this, new OnCompleteListener<AuthResult>() {
                     @Override
                     public void onComplete(@NonNull Task<AuthResult> task) {
@@ -97,12 +95,15 @@ public class RegisterActivity extends AppCompatActivity{
                             // If sign in fails, display a message to the user.
 
                             //Si el usuario ya existe
-                            if(task.getException() instanceof FirebaseAuthUserCollisionException){
+                            if (task.getException() instanceof FirebaseAuthUserCollisionException) {
                                 Toast.makeText(RegisterActivity.this, "Ese usuario ya existe!",
                                         Toast.LENGTH_SHORT).show();
-                            } else{
+                            } else {
                                 Toast.makeText(RegisterActivity.this, MSG_ERROR,
                                         Toast.LENGTH_SHORT).show();
+                                Intent intent = new Intent(getApplicationContext(), RegisterActivity.class);
+                                startActivity(intent);
+
                                 //TODO progressbar
                             }
 
@@ -115,13 +116,13 @@ public class RegisterActivity extends AppCompatActivity{
 
 
     @OnClick(R.id.btn_sign_up)
-    public void signUp(View view){
+    public void signUp(View view) {
 
         registroUsuario();
 
         //3 segundos antes de pasar al Login despues de registrarse
-        new Handler().postDelayed(new Runnable(){
-            public void run(){
+        new Handler().postDelayed(new Runnable() {
+            public void run() {
 
                 Intent intent = new Intent(getApplicationContext(), LoginActivity.class);
                 startActivity(intent);

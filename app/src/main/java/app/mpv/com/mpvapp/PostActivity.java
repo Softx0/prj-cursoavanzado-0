@@ -1,80 +1,99 @@
 package app.mpv.com.mpvapp;
 
-import android.media.Image;
-import android.support.v7.app.AppCompatActivity;
+import android.app.ProgressDialog;
+import android.content.Intent;
 import android.os.Bundle;
+import android.support.annotation.NonNull;
+import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
+import android.util.Log;
 import android.view.View;
-import android.widget.ImageView;
-import android.widget.TextView;
+import android.widget.Button;
+import android.widget.Toast;
 
-import com.firebase.ui.database.FirebaseRecyclerAdapter;
+import com.google.firebase.database.DataSnapshot;
+import com.google.firebase.database.DatabaseError;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.google.firebase.database.ValueEventListener;
+
+import java.util.ArrayList;
+import java.util.List;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
+import butterknife.OnClick;
 
 public class PostActivity extends AppCompatActivity {
 
-    @BindView(R.id.recycler_view_layout)
-    RecyclerView mRecyclerView;
+    //initialise views
+    private Button mUploadBtn;
 
+    //objects
+    private ProgressDialog mProgresDialog;
 
-    private FirebaseRecyclerAdapter<Post, PostAdapter> mRvAdapter;
-    private DatabaseReference mDatabaseReference;
+    private RecyclerView mRecyclerView;
 
-    public static final String REFERENCE_POST = "POST";
+    private RecyclerView.Adapter mAdapter;
+
+    private DatabaseReference mSecondDatabaseReference;
+
+    private List<Post> postsUsers;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
         ButterKnife.bind(this);
-        mainMethod();
 
-    }
-
-    public void mainMethod() {
-        mDatabaseReference = FirebaseDatabase.getInstance().getReference(REFERENCE_POST);
+        mRecyclerView = (RecyclerView) findViewById(R.id.post_rv);
+        mRecyclerView.setHasFixedSize(true);
         mRecyclerView.setLayoutManager(new LinearLayoutManager(PostActivity.this));
-        setupAdapter();
-    }
 
-    public void setupAdapter() {
-        mRvAdapter = new FirebaseRecyclerAdapter<Post, PostAdapter>(
+        postsUsers = new ArrayList<>();
+        mProgresDialog = new ProgressDialog(this);
 
-                Post.class, R.layout.recycler_item, PostAdapter.class, mDatabaseReference
-        ) {
+        mUploadBtn = (Button) findViewById(R.id.redirect_post);
+        mUploadBtn.setOnClickListener(new View.OnClickListener() {
             @Override
-            protected void populateViewHolder(PostAdapter viewHolder, Post model, int position) {
-                viewHolder.setPostImage(model.getImageUrl());
-                viewHolder.setNumLikes(model.getPriceImage());
+            public void onClick(View view) {
+                Intent intent = new Intent(PostActivity.this, ChoosePost.class);
+                startActivity(intent);
             }
-        };
+        });
+
+        mProgresDialog.setTitle("Loading Lastest Posts!");
+        mProgresDialog.setMessage("Please wait...");
+        mProgresDialog.show();
+        Post mPost = new Post();
+        Toast.makeText(this, ""+mPost.getImageUrl(),Toast.LENGTH_LONG).show();
+        mSecondDatabaseReference = FirebaseDatabase.getInstance().getReference(Constant.DATABASE_PATH_UPLOADS);
+
+        //adding an event listener to fetch values
+        mSecondDatabaseReference.addValueEventListener(new ValueEventListener() {
+            @Override
+            public void onDataChange(DataSnapshot snapshot) {
+                //dismissing the progress dialog
+                mProgresDialog.dismiss();
+
+                //iterating through all the values in database
+                for (DataSnapshot postSnapshot : snapshot.getChildren()) {
+                    Post post = postSnapshot.getValue(Post.class);
+                    postsUsers.add(post);
+                }
+                //creating adapter
+                mAdapter = new PostAdapter(getApplicationContext(), postsUsers);
+
+                //adding adapter to recyclerview
+                mRecyclerView.setAdapter(mAdapter);
+            }
+
+            @Override
+            public void onCancelled(DatabaseError databaseError) {
+                mProgresDialog.dismiss();
+            }
+        });
     }
 
-
-    public static class PostAdapter extends RecyclerView.ViewHolder {
-
-
-        ImageView imagePost;
-
-        public ImageView btnLike;
-        public TextView numLikes;
-
-        public PostAdapter(View itemView) {
-            super(itemView);
-
-        }
-
-        public void setPostImage (String url){
-
-        }
-
-        public void setNumLikes (long numLikes){
-
-        }
-    }
 }

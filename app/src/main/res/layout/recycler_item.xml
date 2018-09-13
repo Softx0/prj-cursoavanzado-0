@@ -1,50 +1,53 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.v7.widget.CardView
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:layout_margin="16dp"
+    android:layout_height="match_parent"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
-    android:id="@+id/items_recycler_post">
+    tools:context=".PostAdapter">
 
-    <LinearLayout
-        android:layout_height="match_parent"
-        android:layout_width="match_parent"
-        android:id="@+id/linear_item"
-        android:orientation="vertical"
-        >
-        <ImageView
-            android:layout_width="wrap_content"
-            android:id="@+id/image_user"
-            android:layout_height="wrap_content"
-            android:adjustViewBounds="true"/>
-    <LinearLayout
+   <!-- <android.support.v7.widget.CardView
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:layout_gravity="center_vertical|right"
-        android:layout_marginLeft="16dp"
-        android:layout_marginRight="16dp"
-        android:id="@+id/linear_child"
-        android:orientation="horizontal"
-        >
-        <ImageView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:padding="16dp"
-            android:id="@+id/btn_like"
-            android:src="@drawable/googleg_standard_color_18"/>
-        <TextView
-            android:layout_height="wrap_content"
-            android:layout_width="wrap_content"
-            android:layout_gravity="center"
-            android:id="@+id/num_likes"
-            android:text="0"
-            android:textColor="#000000"
-            android:textSize="20sp"
-            />
+        android:layout_margin="16dp"
+        android:elevation="@dimen/elevation_cardView"
+        android:id="@+id/items_recycler_post">-->
 
-    </LinearLayout>
+            <ImageView
+                android:layout_marginBottom="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginTop="50dp"
+                android:layout_width="match_parent"
+                android:id="@+id/image_user"
+                android:layout_height="wrap_content"/>
 
-    </LinearLayout>
+           <!-- <LinearLayout
+                android:layout_height="wrap_content"
+                android:layout_width="wrap_content"
+                android:id="@+id/description"
+                android:layout_gravity="center|right"
+                android:orientation="vertical">-->
 
-</android.support.v7.widget.CardView>
+                <TextView
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:id="@+id/titleProducts"
+                    android:layout_gravity="left"
+                    android:textColor="#000000"
+                    android:text=""
+                    android:textSize="20sp" />
+
+                <TextView
+                    android:layout_height="wrap_content"
+                    android:layout_width="match_parent"
+                    android:id="@+id/price"
+                    android:layout_gravity="left"
+                    android:text=""
+                    android:textColor="#000000"
+                    android:textSize="25sp" />
+            </LinearLayout>
+
+    <!--</LinearLayout>-->
+
+   <!-- </android.support.v7.widget.CardView>-->

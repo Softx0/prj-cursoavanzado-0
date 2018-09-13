@@ -1,9 +1,9 @@
 package app.mpv.com.mpvapp;
 
 import android.content.Intent;
+import android.os.Bundle;
 import android.support.annotation.NonNull;
 import android.support.v7.app.AppCompatActivity;
-import android.os.Bundle;
 import android.support.v7.widget.Toolbar;
 import android.text.TextUtils;
 import android.view.View;
@@ -63,15 +63,15 @@ public class LoginActivity extends AppCompatActivity {
     }
 
 
-    public void iniciarSesion(){
+    public void iniciarSesion() {
 
         String strEmail = emailLogin.getText().toString().trim();
-        String strPassword= passwordLogin.getText().toString().trim();
-        if(TextUtils.isEmpty(strEmail)){
+        String strPassword = passwordLogin.getText().toString().trim();
+        if (TextUtils.isEmpty(strEmail)) {
             Toast.makeText(this, "Ingrese un correo valido", Toast.LENGTH_SHORT).show();
             return;
         }
-        if(TextUtils.isEmpty(strPassword) && strPassword.length() < 6){
+        if (TextUtils.isEmpty(strPassword) && strPassword.length() < 6) {
             Toast.makeText(this, "Ingrese una contraseña valida", Toast.LENGTH_SHORT).show();
             return;
         }
@@ -91,17 +91,17 @@ public class LoginActivity extends AppCompatActivity {
                                     Toast.LENGTH_SHORT).show();
 
 
-                            Intent intent = new Intent(LoginActivity.this, PostActivity.class);
+                            Intent intent = new Intent(LoginActivity.this, ChoosePost.class);
                             startActivity(intent);
 
                         } else {
                             // If sign in fails, display a message to the user.
 
                             //Si el usuario ya existe
-                            if(task.getException() instanceof FirebaseAuthUserCollisionException){
+                            if (task.getException() instanceof FirebaseAuthUserCollisionException) {
                                 Toast.makeText(LoginActivity.this, "Ese usuario ya existe!",
                                         Toast.LENGTH_SHORT).show();
-                            } else{
+                            } else {
                                 Toast.makeText(LoginActivity.this, "Credenciales incorrectas!",
                                         Toast.LENGTH_SHORT).show();
                                 //TODO progressbar
