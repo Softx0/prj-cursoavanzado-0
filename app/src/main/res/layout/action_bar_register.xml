@@ -3,13 +3,14 @@
     android:id="@+id/toolbar"
     android:layout_width="match_parent"
     android:layout_height="?attr/actionBarSize"
-    android:background="#CB1C1C"
+    android:background="@color/greenMPV"
     android:minHeight="?attr/actionBarSize">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#CB1C1C"
+        android:gravity="center"
+        android:background="@color/greenMPV"
         android:orientation="horizontal">
 
         <TextView
@@ -19,7 +20,7 @@
             android:layout_gravity="center"
             android:layout_marginStart="-1dp"
             android:text="Registro"
-            android:textColor="#FFFFFF"
+            android:textColor="#000000"
             android:textSize="23sp"
             android:textStyle="bold" />
 
@@ -30,7 +31,7 @@
             android:layout_gravity="center"
             android:layout_marginStart="10dp"
             android:text="Merca Plaza"
-            android:textColor="#FFFFFF"
+            android:textColor="#000000"
             android:textSize="23sp"
             android:textStyle="bold" />
 
@@ -41,7 +42,7 @@
             android:layout_gravity="center"
             android:layout_marginStart="10dp"
             android:text="Popular"
-            android:textColor="#FFFFFF"
+            android:textColor="#e5322c"
             android:textSize="23sp"
             android:textStyle="bold" />
 

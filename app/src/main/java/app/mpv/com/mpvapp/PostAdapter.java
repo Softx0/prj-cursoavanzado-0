@@ -2,21 +2,19 @@ package app.mpv.com.mpvapp;
 
 import android.content.Context;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import com.bumptech.glide.Glide;
 import com.bumptech.glide.Priority;
-import com.bumptech.glide.load.DecodeFormat;
-import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.bumptech.glide.request.RequestOptions;
 
 import java.util.List;
+
+import static app.mpv.com.mpvapp.R.drawable.loading;
 
 public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder> {
 
@@ -24,6 +22,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder> {
     private List<Post> posts;
 
     public PostAdapter() {
+
     }
 
     public PostAdapter(Context context, List<Post> posts) {
@@ -46,6 +45,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder> {
 
         holder.mTitleProduct.setText(mPost.getTitleImage());
         holder.mPriceProduct.setText(mPost.getPriceImage());
+        holder.mAddressProduct.setText(mPost.getAddressImage());
 
         Glide.with(context)
                 .load(mPost.getImageUrl())
@@ -53,10 +53,10 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder> {
         RequestOptions options = new RequestOptions()
                 .centerCrop()
                 .fitCenter()
-                .placeholder(R.drawable.loading)
-                .error(R.drawable.loading)
+                .placeholder(loading)
+                .error(loading)
                 .priority(Priority.HIGH);
-        ;
+
     }
 
     @Override
@@ -70,13 +70,18 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder> {
         public TextView mTitleProduct;
         public TextView mPriceProduct;
         public ImageView mImageView;
+        public TextView mAddressProduct;
 
         public ViewHolder(View itemView) {
             super(itemView);
 
-            mTitleProduct = (TextView) itemView.findViewById(R.id.titleProducts);
-            mPriceProduct = (TextView) itemView.findViewById(R.id.price);
-            mImageView = (ImageView) itemView.findViewById(R.id.image_user);
+            mTitleProduct = itemView.findViewById(R.id.titleProducts);
+            mPriceProduct = itemView.findViewById(R.id.price);
+            mImageView = itemView.findViewById(R.id.image_user);
+            mAddressProduct = itemView.findViewById(R.id.Myaddress);
+
         }
+
+
     }
 }
