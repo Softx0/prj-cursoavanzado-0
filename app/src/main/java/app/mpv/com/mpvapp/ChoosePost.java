@@ -62,8 +62,6 @@ public class ChoosePost extends AppCompatActivity {
     TextView viewAll;
     @BindView(R.id.mProductImage)
     ImageView productImage;
-    @BindView(R.id.mBtnAdress)
-    Button btnGenerateAdress;
     @BindView(R.id.mAddress)
     TextView mAdress;
 
@@ -236,7 +234,7 @@ public class ChoosePost extends AppCompatActivity {
                             progressDialog.dismiss();
 
                             //displaying success toast
-                            Toast.makeText(getApplicationContext(), "File Uploaded ", Toast.LENGTH_LONG).show();
+                            Toast.makeText(getApplicationContext(), "Podructo Publicado!", Toast.LENGTH_LONG).show();
 
                             //creating the upload object to store uploaded image details
                             Post post = new Post(taskSnapshot.getDownloadUrl().toString(),

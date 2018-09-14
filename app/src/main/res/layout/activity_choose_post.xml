@@ -2,6 +2,7 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    android:background="#FFFFFF"
     android:layout_height="match_parent">
 
     <LinearLayout
@@ -33,6 +34,10 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
+                android:textColor="#FFFFFF"
+                android:background="#E43F3F"
+                android:padding="10dp"
+                android:textSize="17sp"
                 android:textAllCaps="false"
                 android:layout_marginLeft="40dp"
                 android:text="Choose a Product" />
@@ -48,39 +53,34 @@
             <EditText
                 android:layout_marginTop="40dp"
                 android:id="@+id/mTitleProduct"
+                android:textColor="@color/greenMPV"
                 android:layout_width="match_parent"
+                android:singleLine="true"
+                android:imeOptions="flagNoExtractUi"
+                android:drawableLeft="@mipmap/ic_product"
                 android:layout_height="wrap_content"
-                android:hint="Enter title for Product..." />
+                android:hint="        Enter title for Product..." />
 
             <EditText
                 android:id="@+id/mPriceProduct"
                 android:layout_marginTop="30dp"
                 android:layout_width="match_parent"
+                android:textColor="@color/greenMPV"
                 android:layout_height="wrap_content"
-                android:hint="Enter price for Product..." />
 
-            <LinearLayout
-                android:id="@+id/linearLayoutthird"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_marginTop="40dp"
-                android:orientation="horizontal">
+                android:singleLine="true"
+                android:imeOptions="flagNoExtractUi"
+                android:drawableLeft="@mipmap/money_bag"
+                android:hint="        Enter price for Product..." />
+
 
                 <TextView
                     android:id="@+id/mAddress"
+                    android:layout_marginTop="30dp"
                     android:layout_width="match_parent"
+                    android:textColor="#E43F3F"
                     android:layout_height="wrap_content"
-                    android:hint="Adress..." />
-
-                <Button
-                    android:id="@+id/mBtnAdress"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:textSize="20sp"
-                    android:textAllCaps="false"
-                    android:text="Generate Adress" />
-
-            </LinearLayout>
+                    android:hint="Address..." />
 
             <Button
                 android:id="@+id/mBtnUpload"
@@ -88,7 +88,9 @@
                 android:layout_height="wrap_content"
                 android:textSize="20sp"
                 android:textAllCaps="false"
-                android:layout_marginTop="60dp"
+                android:textColor="#FFFFFF"
+                android:background="#E43F3F"
+                android:layout_marginTop="90dp"
                 android:layout_gravity="center"
                 android:text="Upload" />
 
@@ -97,11 +99,11 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:padding="10dp"
-                android:textSize="20sp"
+                android:textSize="16sp"
                 android:layout_gravity="center"
                 android:text="View Uploads"
                 android:textAlignment="center"
-                android:textColor="@color/colorPrimary"
+                android:textColor="@color/greenMPV"
                 android:textStyle="bold" />
         </LinearLayout>
     </LinearLayout>
