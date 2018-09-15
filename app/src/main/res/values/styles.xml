@@ -1,4 +1,4 @@
-<resources>
+<resources xmlns:tools="http://schemas.android.com/tools">
 
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
@@ -6,6 +6,395 @@
         <item name="colorPrimary">@color/colorPrimaryDark</item>
         <item name="colorPrimaryDark">@color/greenMPV</item>
         <item name="colorAccent">#000000</item>
+    </style>
+
+    <style name="tv_action_bar_choose">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:layout_marginStart">20dp</item>
+        <item name="android:textColor">#000</item>
+        <item name="android:textSize">23sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="image_action_bar_choose">
+        <item name="android:layout_width">90dp</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="style_tv_inicio">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:layout_marginStart">-1dp</item>
+        <item name="android:textColor">#000000</item>
+        <item name="android:textSize">23sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="style_tv_mpv">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:layout_marginStart">10dp</item>
+        <item name="android:textColor">#000000</item>
+        <item name="android:textSize">23sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="style_tv_popular">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:layout_marginStart">10dp</item>
+        <item name="android:textColor">#e5322c</item>
+        <item name="android:textSize">23sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="style_image_upload">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:padding">10dp</item>
+    </style>
+
+    <style name="style_logo_mpv_action_bar_post">
+        <item name="android:layout_width">130dp</item>
+        <item name="android:layout_marginStart">50dp</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="style_action_bar_sign_out">
+        <item name="android:layout_width">70dp</item>
+        <item name="android:layout_height">70dp</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:layout_marginStart">37dp</item>
+        <item name="android:padding">20dp</item>
+    </style>
+
+    <style name="style_action_bar_tv_registro">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:layout_marginStart">-1dp</item>
+        <item name="android:textColor">#000000</item>
+        <item name="android:textSize">23sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="style_action_bar_tv_mpv">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:layout_marginStart">10dp</item>
+        <item name="android:textColor">#000000</item>
+        <item name="android:textSize">23sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="style_action_bar_tv_popular">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:layout_marginStart">10dp</item>
+        <item name="android:textColor">#e5322c</item>
+        <item name="android:textSize">23sp</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="style_image_choose">
+        <item name="android:layout_width">120dp</item>
+        <item name="android:layout_height">120dp</item>
+        <item name="android:layout_margin">20dp</item>
+        <item name="android:background">@drawable/loading</item>
+    </style>
+
+    <style name="style_btn_elegir_producto">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:layout_marginStart">40dp</item>
+        <item name="android:layout_marginEnd">5dp</item>
+        <item name="android:background">#E43F3F</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">17sp</item>
+    </style>
+
+    <style name="style_ly_choose">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_marginLeft">10dp</item>
+        <item name="android:layout_marginRight">10dp</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">vertical</item>
+    </style>
+
+    <style name="style_edtv_nombre_producto">
+        <item name="android:layout_marginTop">20dp</item>
+        <item name="android:textColor">@color/greenMPV</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:imeOptions">flagNoExtractUi</item>
+        <item name="android:drawableStart">@mipmap/ic_product</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="style_edtv_precio_producto">
+        <item name="android:layout_marginTop">20dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:textColor">@color/greenMPV</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:singleLine">true</item>
+        <item name="android:inputType">numberDecimal</item>
+        <item name="android:imeOptions">flagNoExtractUi</item>
+        <item name="android:drawableStart">@mipmap/money_bag</item>
+    </style>
+
+    <style name="style_edtv_direccion">
+        <item name="android:layout_marginTop">20dp</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:textColor">@color/Red</item>
+        <item name="android:layout_height">wrap_content</item>
+    </style>
+
+    <style name="style_btn_subir_producto">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textSize">20sp</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:background">@color/Red</item>
+        <item name="android:layout_marginTop">30dp</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:layout_gravity">center</item>
+    </style>
+
+    <style name="style_tv_ver_todos_productos">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:padding">10dp</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textColor">@color/green_mpv</item>
+        <item name="android:textStyle">bold</item>
+    </style>
+
+    <style name="style_image_inicio_mpv">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">72dp</item>
+        <item name="android:layout_alignParentTop">true</item>
+        <item name="android:layout_centerHorizontal">true</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:layout_marginTop">65dp</item>
+    </style>
+
+    <style name="style_ry_form">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_below">@+id/logo_title</item>
+        <item name="android:layout_marginLeft">30dp</item>
+        <item name="android:layout_marginRight">30dp</item>
+        <item name="android:layout_marginTop">90dp</item>
+        <item name="android:background">@color/white</item>
+        <item name="android:elevation" tools:targetApi="lollipop">4dp</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:padding">20dp</item>
+    </style>
+
+    <style name="style_ly_form_2">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:paddingTop">30dp</item>
+    </style>
+
+    <style name="style_edtv_correo">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:drawableStart">@mipmap/login</item>
+        <item name="android:singleLine">false</item>
+        <item name="android:imeOptions">flagNoExtractUi</item>
+        <item name="android:inputType">textEmailAddress</item>
+    </style>
+
+    <style name="style_edtv_contrasen_a">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_marginTop">16dp</item>
+        <item name="android:singleLine">false</item>
+        <item name="android:imeOptions">flagNoExtractUi</item>
+        <item name="android:drawableStart">@mipmap/key</item>
+        <item name="android:inputType">textPassword</item>
+    </style>
+
+    <style name="style_tv_olvido_contrasen_a">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">right</item>
+        <item name="android:paddingTop">5dp</item>
+    </style>
+
+    <style name="style_btn_ingresar">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">22dp</item>
+        <item name="android:background">@color/Red</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:textSize">24sp</item>
+    </style>
+
+    <style name="style_tv_no_tienes_cuenta">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:paddingTop">5dp</item>
+        <item name="android:textSize">15sp</item>
+        <item name="android:textColor">@color/Black</item>
+    </style>
+
+    <style name="style_image_user_iniciar">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_below">@+id/logo_title</item>
+        <item name="android:layout_centerHorizontal">true</item>
+        <item name="android:layout_marginTop">15dp</item>
+        <item name="android:background">@mipmap/mank</item>
+        <item name="android:elevation" tools:targetApi="lollipop">4dp</item>
+    </style>
+
+    <style name="style_image_mpv_registro">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">92dp</item>
+        <item name="android:layout_alignParentTop">true</item>
+        <item name="android:layout_centerHorizontal">true</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:layout_marginTop">65dp</item>
+    </style>
+
+    <style name="style_ry_form_registro">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">match_parent</item>
+        <item name="android:layout_below">@+id/logo_register_logo</item>
+        <item name="android:background">@color/white</item>
+        <item name="android:elevation" tools:targetApi="lollipop">4dp</item>
+        <item name="android:orientation">vertical</item>
+        <item name="android:padding">20dp</item>
+        <item name="android:layout_marginLeft">30dp</item>
+        <item name="android:layout_marginRight">30dp</item>
+        <item name="android:layout_marginTop">30dp</item>
+    </style>
+
+    <style name="style_edtv_nombre_registro">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:inputType">textCapWords</item>
+        <item name="android:textColor">@color/Black</item>
+        <item name="android:singleLine">false</item>
+        <item name="android:drawableStart">@mipmap/dog_tag</item>
+        <item name="android:textColorHighlight">@color/Black</item>
+        <item name="android:shadowColor">@color/Black</item>
+        <item name="android:imeOptions">flagNoExtractUi</item>
+        <item name="android:textColorLink">@color/Black</item>
+    </style>
+
+    <style name="style_edtv_correo_registro">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:inputType">textEmailAddress</item>
+        <item name="android:textColor">@color/Black</item>
+        <item name="android:singleLine">false</item>
+        <item name="android:drawableStart">@mipmap/login</item>
+        <item name="android:imeOptions">flagNoExtractUi</item>
+    </style>
+
+    <style name="style_edtv_contrasen_a_registro">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/Black</item>
+        <item name="android:imeOptions">flagNoExtractUi</item>
+        <item name="android:drawableStart">@mipmap/key</item>
+        <item name="android:singleLine">false</item>
+        <item name="android:inputType">textPassword</item>
+    </style>
+
+    <style name="style_btn_crear_cuenta_registro">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:layout_marginTop">35dp</item>
+        <item name="android:textColor">@color/white</item>
+        <item name="android:background">@color/Red</item>
+        <item name="android:textAllCaps">false</item>
+        <item name="android:textSize">18sp</item>
+        <item name="android:padding">12dp</item>
+    </style>
+
+    <style name="style_tv_ingresa_registro">
+        <item name="android:layout_width">fill_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:textColor">@color/Black</item>
+        <item name="android:textSize">17sp</item>
+        <item name="android:layout_marginTop">15dp</item>
+        <item name="android:gravity">center</item>
+    </style>
+
+    <style name="style_card_view">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_margin">16dp</item>
+        <item name="android:elevation" tools:targetApi="lollipop">10dp</item>
+    </style>
+
+    <style name="style_image_product_card_view">
+        <item name="android:layout_marginBottom">8dp</item>
+        <item name="android:layout_marginEnd">8dp</item>
+        <item name="android:layout_marginStart">8dp</item>
+        <item name="android:layout_marginTop">20dp</item>
+        <item name="android:layout_width">100dp</item>
+        <item name="android:contentDescription">@string/image_product</item>
+        <item name="android:layout_height">100dp</item>
+    </style>
+
+    <style name="style_tv_titulo_producto_card_view">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:textColor">@color/Black</item>
+        <item name="android:textSize">20sp</item>
+    </style>
+
+    <style name="style_tv_precio_producto">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:textColor">@color/Black</item>
+        <item name="android:textSize">15sp</item>
+    </style>
+
+    <style name="style_tv_direccion_card_view">
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_marginLeft">15dp</item>
+        <item name="android:layout_gravity">center</item>
+        <item name="android:textColor">@color/Black</item>
+        <item name="android:textSize">14sp</item>
+    </style>
+
+    <style name="style_btn_compartir_card_view">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">35dp</item>
+        <item name="android:background">@color/Red</item>
+        <item name="android:layout_gravity">right</item>
+        <item name="android:textSize">12sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:layout_margin">5dp</item>
+        <item name="android:textColor">@color/white</item>
     </style>
 
 </resources>

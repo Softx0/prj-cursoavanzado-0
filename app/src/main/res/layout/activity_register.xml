@@ -18,28 +18,12 @@
             android:layout_height="wrap_content"
             android:layout_width="match_parent" />
 
-
             <ImageView
                 android:src="@mipmap/logo_action_bar"
-                android:layout_width="wrap_content"
-                android:layout_height="92dp"
-                android:layout_alignParentTop="true"
-                android:layout_centerHorizontal="true"
                 android:id="@+id/logo_register_logo"
-                android:layout_gravity="center"
-                android:layout_marginTop="65dp" />
+                style="@style/style_image_mpv_registro" />
 
-        <RelativeLayout
-            android:layout_width="fill_parent"
-            android:layout_height="match_parent"
-            android:layout_below="@+id/logo_register_logo"
-            android:background="#FFFFFF"
-            android:elevation="4dp"
-            android:orientation="vertical"
-            android:padding="20dp"
-            android:layout_marginLeft="30dp"
-            android:layout_marginRight="30dp"
-            android:layout_marginTop="30dp">
+        <RelativeLayout style="@style/style_ry_form_registro">
 
             <LinearLayout
                 android:layout_width="fill_parent"
@@ -49,80 +33,49 @@
                 <android.support.design.widget.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textColor="#000000">
+                    android:textColor="@color/Black">
 
                     <EditText
                         android:id="@+id/input_name"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:inputType="textCapWords"
-                        android:textColor="#000000"
-                        android:drawableLeft="@mipmap/dog_tag"
-                        android:textColorHighlight="#000000"
-                        android:shadowColor="#000000"
-                        android:imeOptions="flagNoExtractUi"
-                        android:textColorLink="#000000"
-                        android:hint="Name" />
+                        android:hint="@string/nombre"
+                        style="@style/style_edtv_nombre_registro" />
                 </android.support.design.widget.TextInputLayout>
 
                 <!-- Email Label -->
                 <android.support.design.widget.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textColor="#000000">
+                    android:textColor="@color/Black">
 
                     <EditText
                         android:id="@+id/input_email"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:inputType="textEmailAddress"
-                        android:textColor="#000000"
-                        android:drawableLeft="@mipmap/login"
-                        android:imeOptions="flagNoExtractUi"
-                        android:hint="Email" />
+                        android:hint="@string/correo"
+                        style="@style/style_edtv_correo_registro" />
                 </android.support.design.widget.TextInputLayout>
 
                 <!-- Password Label -->
                 <android.support.design.widget.TextInputLayout
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
-                    android:textColor="#000000">
+                    android:textColor="@color/Black">
 
                     <EditText
                         android:id="@+id/input_password"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textColor="#000000"
-                        android:imeOptions="flagNoExtractUi"
-                        android:drawableLeft="@mipmap/key"
-                        android:inputType="textPassword"
-                        android:hint="Password" />
+                        android:hint="@string/contrase_a"
+                        style="@style/style_edtv_contrasen_a_registro" />
                 </android.support.design.widget.TextInputLayout>
 
                 <!-- Signup Button -->
                 <android.support.v7.widget.AppCompatButton
                     android:id="@+id/btn_sign_up"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:layout_gravity="center"
-                    android:layout_marginTop="35dp"
-                    android:textColor="#FFFFFF"
-                    android:background="#E43F3F"
-                    android:textSize="18dp"
-                    android:padding="12dp"
-                    android:text="Create Account" />
+                    android:text="@string/crear_cuenta"
+                    style="@style/style_btn_crear_cuenta_registro" />
 
                 <TextView
                     android:id="@+id/link_login"
-                    android:layout_width="fill_parent"
-                    android:layout_height="wrap_content"
-                    android:textColor="#000000"
-                    android:textSize="15sp"
-                    android:layout_marginTop="15dp"
-                    android:text="Already a member? Login"
-                    android:gravity="center" />
+                    android:text="@string/ya_tienes_una_cuenta_ingresa"
+                    style="@style/style_tv_ingresa_registro" />
             </LinearLayout>
         </RelativeLayout>
-
     </RelativeLayout>
 </ScrollView>

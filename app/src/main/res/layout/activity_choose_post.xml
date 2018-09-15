@@ -2,7 +2,7 @@
 <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:background="#FFFFFF"
+    android:background="@color/white"
     tools:context=".ChoosePost"
     android:layout_height="match_parent">
 
@@ -14,7 +14,6 @@
 
         <include layout="@layout/action_bar_choose" />
 
-
         <LinearLayout
             android:id="@+id/linearLayout"
             android:layout_width="match_parent"
@@ -23,89 +22,43 @@
 
             <ImageView
                 android:id="@+id/mProductImage"
-                android:layout_width="120dp"
-                android:layout_height="120dp"
-                android:layout_margin="20dp"
-                android:background="@drawable/loading" />
+                style="@style/style_image_choose" />
 
             <Button
                 android:id="@+id/mBtnChoose"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_marginLeft="40dp"
-                android:background="#E43F3F"
-                android:padding="10dp"
-                android:text="Choose a Product"
-                android:textAllCaps="false"
-                android:textColor="#FFFFFF"
-                android:textSize="17sp" />
+                android:text="@string/elige_un_producto"
+                style="@style/style_btn_elegir_producto" />
 
         </LinearLayout>
 
         <LinearLayout
             android:id="@+id/linearLayoutSecond"
-            android:layout_width="match_parent"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+            style="@style/style_ly_choose">
 
             <EditText
-                android:layout_marginTop="30dp"
                 android:id="@+id/mTitleProduct"
-                android:textColor="@color/greenMPV"
-                android:layout_width="match_parent"
-                android:singleLine="true"
-                android:imeOptions="flagNoExtractUi"
-                android:drawableLeft="@mipmap/ic_product"
-                android:layout_height="wrap_content"
-                android:hint="        Enter title for Product..." />
+                android:hint="@string/nombre_del_producto"
+                style="@style/style_edtv_nombre_producto" />
 
             <EditText
                 android:id="@+id/mPriceProduct"
-                android:layout_marginTop="30dp"
-                android:layout_width="match_parent"
-                android:textColor="@color/greenMPV"
-                android:layout_height="wrap_content"
-
-                android:singleLine="true"
-                android:imeOptions="flagNoExtractUi"
-                android:drawableLeft="@mipmap/money_bag"
-                android:hint="        Enter price for Product..." />
-
+                android:hint="@string/precio_del_producto"
+                style="@style/style_edtv_precio_producto" />
 
                 <TextView
                     android:id="@+id/mAddress"
-                    android:layout_marginTop="30dp"
-                    android:layout_width="match_parent"
-                    android:textColor="#E43F3F"
-                    android:layout_height="wrap_content"
-                    android:hint="Address..." />
+                    android:hint="@string/cargando"
+                    style="@style/style_edtv_direccion" />
 
             <Button
                 android:id="@+id/mBtnUpload"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:textSize="20sp"
-                android:textAllCaps="false"
-                android:textColor="#FFFFFF"
-                android:background="#E43F3F"
-                android:layout_marginTop="30dp"
-                android:layout_gravity="center"
-                android:text="Upload" />
+                android:text="@string/subir_producto"
+                style="@style/style_btn_subir_producto" />
 
             <TextView
                 android:id="@+id/mViewAll"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:padding="10dp"
-                android:textSize="16sp"
-                android:layout_gravity="center"
-                android:text="View Uploads"
-                android:textAlignment="center"
-                android:textColor="@color/greenMPV"
-                android:textStyle="bold" />
+                android:text="@string/ver_todos_los_productos"
+                style="@style/style_tv_ver_todos_productos" />
         </LinearLayout>
     </LinearLayout>
 </ScrollView>

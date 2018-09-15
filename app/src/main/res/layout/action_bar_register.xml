@@ -3,7 +3,7 @@
     android:id="@+id/toolbar"
     android:layout_width="match_parent"
     android:layout_height="?attr/actionBarSize"
-    android:background="@color/greenMPV"
+    android:background="@color/green_mpv"
     android:minHeight="?attr/actionBarSize">
 
     <LinearLayout
@@ -15,36 +15,18 @@
 
         <TextView
             android:id="@+id/titleTv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginStart="-1dp"
-            android:text="Registro"
-            android:textColor="#000000"
-            android:textSize="23sp"
-            android:textStyle="bold" />
+            android:text="@string/registro"
+            style="@style/style_action_bar_tv_registro" />
 
         <TextView
             android:id="@+id/titleMercaTv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginStart="10dp"
-            android:text="Merca Plaza"
-            android:textColor="#000000"
-            android:textSize="23sp"
-            android:textStyle="bold" />
+            android:text="@string/merca_plaza"
+            style="@style/style_action_bar_tv_mpv" />
 
         <TextView
             android:id="@+id/titlePlazaTv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginStart="10dp"
-            android:text="Popular"
-            android:textColor="#e5322c"
-            android:textSize="23sp"
-            android:textStyle="bold" />
+            android:text="@string/popular"
+            style="@style/style_action_bar_tv_popular" />
 
     </LinearLayout>
 

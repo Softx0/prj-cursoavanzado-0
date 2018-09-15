@@ -1,3 +1,29 @@
 <resources>
     <string name="app_name">Mpv App</string>
+    <string name="compartir_producto">Compartir Producto</string>
+    <string name="inicio">Inicio</string>
+    <string name="merca_plaza">Merca Plaza</string>
+    <string name="popular">Popular</string>
+    <string name="registro">Registro</string>
+    <string name="elige_un_producto">Elige un producto</string>
+    <string name="nombre_del_producto">Nombre del producto...</string>
+    <string name="precio_del_producto">Precio del producto...</string>
+    <string name="cargando">Cargando...</string>
+    <string name="subir_producto">Subir producto</string>
+    <string name="ver_todos_los_productos">Ver todos los productos</string>
+    <string name="example_email_com">example@email.com</string>
+    <string name="contrase_a">contraseña...</string>
+    <string name="olvidaste_la_contrase_a">Olvidaste la Contraseña?</string>
+    <string name="ingresar">Ingresar</string>
+    <string name="no_tienes_una_cuenta_aun_registrate">No tienes una cuenta aun? Registrate</string>
+    <string name="nombre">Nombre</string>
+    <string name="correo">Correo..</string>
+    <string name="crear_cuenta">Crear Cuenta</string>
+    <string name="ya_tienes_una_cuenta_ingresa">Ya tienes una cuenta? Ingresa!</string>
+    <string name="image_product">image_product</string>
+    <string name="titulo_del_producto">Titulo del Producto...</string>
+    <string name="blank" />
+    <string name="rd_precio_hint">RD$ Precio</string>
+    <string name="direccion">Direccion!</string>
+    <string name="compartir">Compartir!</string>
 </resources>

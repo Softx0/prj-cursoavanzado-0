@@ -3,48 +3,30 @@
     android:id="@+id/toolbar"
     android:layout_width="match_parent"
     android:layout_height="?attr/actionBarSize"
-    android:background="#009641"
+    android:background="@color/green_mpv"
     android:elevation="5dp"
     android:minHeight="?attr/actionBarSize">
 
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#009641"
+        android:background="@color/green_mpv"
         android:orientation="horizontal">
 
         <TextView
             android:id="@+id/titleTv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginStart="-1dp"
-            android:text="Login"
-            android:textColor="#000000"
-            android:textSize="23sp"
-            android:textStyle="bold" />
+            android:text="@string/inicio"
+            style="@style/style_tv_inicio" />
 
         <TextView
             android:id="@+id/titleMercaTv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginStart="10dp"
-            android:text="Merca Plaza"
-            android:textColor="#000000"
-            android:textSize="23sp"
-            android:textStyle="bold" />
+            android:text="@string/merca_plaza"
+            style="@style/style_tv_mpv" />
 
         <TextView
             android:id="@+id/titlePlazaTv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginStart="10dp"
-            android:text="Popular"
-            android:textColor="#e5322c"
-            android:textSize="23sp"
-            android:textStyle="bold" />
+            android:text="@string/popular"
+            style="@style/style_tv_popular" />
 
     </LinearLayout>
 

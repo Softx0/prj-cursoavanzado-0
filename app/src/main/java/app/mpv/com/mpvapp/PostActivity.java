@@ -7,7 +7,6 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.support.v7.widget.Toolbar;
-import android.view.View;
 import android.widget.ImageView;
 
 import com.google.firebase.auth.FirebaseAuth;
@@ -21,29 +20,29 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+import app.mpv.com.mpvapp.app.mpv.com.mpvapp.adapter.PostAdapter;
+import app.mpv.com.mpvapp.app.mpv.com.mpvapp.helper.Constant;
+import app.mpv.com.mpvapp.app.mpv.com.mpvapp.model.Post;
 import butterknife.BindView;
 import butterknife.ButterKnife;
+
+import static app.mpv.com.mpvapp.app.mpv.com.mpvapp.helper.Constant.BUSCANDO_PRODUCTOS_MAS_RECIENTES;
+import static app.mpv.com.mpvapp.app.mpv.com.mpvapp.helper.Constant.PORFAVOR_ESPERA;
 
 public class PostActivity extends AppCompatActivity {
 
     //initialise views
     private ImageView uploadPost;
     private ImageView iconMPV;
-
     private ImageView signOut;
-    //objects
     private ProgressDialog mProgresDialog;
-
     private RecyclerView mRecyclerView;
-
-    private RecyclerView.Adapter mAdapter;
-
-    private DatabaseReference mSecondDatabaseReference;
-
-    private List<Post> postsUsers;
-
     @BindView(R.id.toolbar)
     Toolbar toolbar;
+
+    private RecyclerView.Adapter mAdapter;
+    private DatabaseReference mSecondDatabaseReference;
+    private List<Post> postsUsers;
     private FirebaseAuth mAuth;
 
     @Override
@@ -63,26 +62,21 @@ public class PostActivity extends AppCompatActivity {
         postsUsers = new ArrayList<>();
         mProgresDialog = new ProgressDialog(this);
         signOut = findViewById(R.id.sign_out);
-        signOut.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                mAuth.signOut();
-                Intent intent = new Intent(PostActivity.this, LoginActivity.class);
-                startActivity(intent);
-                finish();
-            }
+        signOut.setOnClickListener(view -> {
+            mAuth.signOut();
+            Intent intent = new Intent(PostActivity.this, LoginActivity.class);
+            startActivity(intent);
+            finish();
         });
         uploadPost = findViewById(R.id.ic_upload);
-        uploadPost.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(PostActivity.this, ChoosePost.class);
-                startActivity(intent);
-            }
+        uploadPost.setOnClickListener(view -> {
+            Intent intent = new Intent(PostActivity.this, ChoosePost.class);
+            startActivity(intent);
+            finish();
         });
 
-        mProgresDialog.setTitle("Buscando productos mas recientes!");
-        mProgresDialog.setMessage("Porfavor espera...");
+        mProgresDialog.setTitle(BUSCANDO_PRODUCTOS_MAS_RECIENTES);
+        mProgresDialog.setMessage(PORFAVOR_ESPERA);
         mProgresDialog.show();
 
         mSecondDatabaseReference = FirebaseDatabase.getInstance().getReference(Constant.DATABASE_PATH_UPLOADS);
@@ -94,11 +88,9 @@ public class PostActivity extends AppCompatActivity {
                 //dismissing the progress dialog
                 mProgresDialog.dismiss();
 
-
                 //iterating through all the values in database
                 for (DataSnapshot postSnapshot : snapshot.getChildren()) {
                     Post post = postSnapshot.getValue(Post.class);
-
                     postsUsers.add(post);
                     Collections.reverse(postsUsers);
                 }
@@ -114,7 +106,5 @@ public class PostActivity extends AppCompatActivity {
                 mProgresDialog.dismiss();
             }
         });
-
     }
-
 }

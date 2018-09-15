@@ -1,4 +1,4 @@
-package app.mpv.com.mpvapp;
+package app.mpv.com.mpvapp.app.mpv.com.mpvapp.adapter;
 
 import android.content.Context;
 import android.content.Intent;
@@ -20,12 +20,16 @@ import java.io.File;
 import java.io.FileOutputStream;
 import java.util.List;
 
+import app.mpv.com.mpvapp.R;
+import app.mpv.com.mpvapp.app.mpv.com.mpvapp.model.Post;
+
 import static app.mpv.com.mpvapp.R.drawable.loading;
 
 public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder> {
 
     private Context context;
     private List<Post> posts;
+    Button mBtnShareTo;
 
     public PostAdapter() {
 
@@ -63,7 +67,7 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder> {
                 .error(loading)
                 .priority(Priority.HIGH);
 
-        holder.mBtnShareTo.setOnClickListener((v) -> {
+        mBtnShareTo.setOnClickListener((v) -> {
             holder.mImageView.buildDrawingCache();
             Bitmap bitmap = holder.mImageView.getDrawingCache();
 
@@ -98,7 +102,6 @@ public class PostAdapter extends RecyclerView.Adapter<PostAdapter.ViewHolder> {
 
     class ViewHolder extends RecyclerView.ViewHolder {
 
-        public Button mBtnShareTo;
         public TextView mTitleProduct;
         public TextView mPriceProduct;
         public ImageView mImageView;
