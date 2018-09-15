@@ -49,7 +49,7 @@ public class LoginActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         mAuth = FirebaseAuth.getInstance();
 
-        dontHaveAccount = (TextView) findViewById(R.id.dontHaveAccount);
+        dontHaveAccount = findViewById(R.id.dontHaveAccount);
 
         dontHaveAccount.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -65,16 +65,17 @@ public class LoginActivity extends AppCompatActivity {
 
     public void iniciarSesion() {
 
-        String strEmail = emailLogin.getText().toString().trim();
+        final String strEmail = emailLogin.getText().toString().trim();
         String strPassword = passwordLogin.getText().toString().trim();
         if (TextUtils.isEmpty(strEmail)) {
             Toast.makeText(this, "Ingrese un correo valido", Toast.LENGTH_SHORT).show();
             return;
         }
-        if (TextUtils.isEmpty(strPassword) && strPassword.length() < 6) {
-            Toast.makeText(this, "Ingrese una contraseña valida", Toast.LENGTH_SHORT).show();
+        if (TextUtils.isEmpty(strPassword)) {
+            Toast.makeText(this, "La Contraseña no puede estar vacia", Toast.LENGTH_SHORT).show();
             return;
         }
+
 
         //Consultando usuario
         mAuth.signInWithEmailAndPassword(strEmail, strPassword)
@@ -87,11 +88,12 @@ public class LoginActivity extends AppCompatActivity {
                             // Sign in success, update UI with the signed-in user's information
                             FirebaseUser user = mAuth.getCurrentUser();
 
-                            Toast.makeText(LoginActivity.this, "Bienvenido!",
+                            Toast.makeText(LoginActivity.this, "Bienvenido " + strEmail + "!",
                                     Toast.LENGTH_SHORT).show();
 
 
-                            Intent intent = new Intent(LoginActivity.this, ChoosePost.class);
+                            Intent intent = new Intent(LoginActivity.this,
+                                    PostActivity.class);
                             startActivity(intent);
 
                         } else {

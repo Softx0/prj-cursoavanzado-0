@@ -26,7 +26,7 @@
             android:layout_centerHorizontal="true"
             android:layout_gravity="center"
             android:layout_marginTop="65dp"
-            android:src="@mipmap/logo" />
+            android:src="@mipmap/logo_action_bar" />
 
         <RelativeLayout
             android:layout_width="fill_parent"

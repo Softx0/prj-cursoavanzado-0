@@ -55,7 +55,7 @@ public class RegisterActivity extends AppCompatActivity {
         ButterKnife.bind(this);
         setSupportActionBar(toolbar);
 
-        link_login = (TextView) findViewById(R.id.link_login);
+        link_login = findViewById(R.id.link_login);
 
         link_login.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -74,11 +74,19 @@ public class RegisterActivity extends AppCompatActivity {
 
         if (TextUtils.isEmpty(strEmail)) {
             Toast.makeText(this, "Ingrese un correo valido", Toast.LENGTH_SHORT).show();
-
+            return;
         }
-        if (TextUtils.isEmpty(strPassword) && strPassword.length() < 8 && strPassword.contains("*")) {
+        if (TextUtils.isEmpty(strPassword)) {
             Toast.makeText(this, "Ingrese una contraseña valida", Toast.LENGTH_SHORT).show();
-
+            return;
+        }
+        if (strPassword.length() < 8) {
+            Toast.makeText(this, "La Contraseña no puede ser tan corta", Toast.LENGTH_SHORT).show();
+            return;
+        }
+        if (!(strPassword.contains("*") || strPassword.contains("/"))) {
+            Toast.makeText(this, "La Contraseña debe tener caracteres especiales", Toast.LENGTH_SHORT).show();
+            return;
         }
 
         //Creado nuevo usuario

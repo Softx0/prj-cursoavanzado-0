@@ -15,6 +15,7 @@ import android.provider.MediaStore;
 import android.support.annotation.NonNull;
 import android.support.v4.app.ActivityCompat;
 import android.support.v7.app.AppCompatActivity;
+import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.webkit.MimeTypeMap;
 import android.widget.Button;
@@ -64,6 +65,8 @@ public class ChoosePost extends AppCompatActivity {
     ImageView productImage;
     @BindView(R.id.mAddress)
     TextView mAdress;
+    @BindView(R.id.toolbar)
+    Toolbar toolbar;
 
     //uri to store file
     private Uri filePath;
@@ -88,6 +91,7 @@ public class ChoosePost extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_choose_post);
         ButterKnife.bind(this);
+        setSupportActionBar(toolbar);
 
         geocoder = new Geocoder(this, Locale.getDefault());
         //mAdress = findViewById(R.id.mAddress);
@@ -159,13 +163,7 @@ public class ChoosePost extends AppCompatActivity {
             ActivityCompat.requestPermissions(ChoosePost.this,
                     new String[]{Manifest.permission.READ_CONTACTS},
                     MY_PERMISSIONS_REQUEST_READ_CONTACTS);
-            // TODO: Consider calling
-            //    ActivityCompat#requestPermissions
-            // here to request the missing permissions, and then overriding
-            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
-            //                                          int[] grantResults)
-            // to handle the case where the user grants the permission. See the documentation
-            // for ActivityCompat#requestPermissions for more details.
+
             return;
         }
         fusedLocationProviderClient.requestLocationUpdates(locationRequest, locationCallback, null);
@@ -217,7 +215,7 @@ public class ChoosePost extends AppCompatActivity {
         if (filePath != null) {
             //displaying progress dialog while image is uploading
             final ProgressDialog progressDialog = new ProgressDialog(this);
-            progressDialog.setTitle("Uploading");
+            progressDialog.setTitle("Subiendo a la plataforma");
             progressDialog.show();
 
             //getting the storage reference
@@ -260,7 +258,8 @@ public class ChoosePost extends AppCompatActivity {
                         public void onProgress(UploadTask.TaskSnapshot taskSnapshot) {
                             //displaying the upload progress
                             double progress = (100.0 * taskSnapshot.getBytesTransferred()) / taskSnapshot.getTotalByteCount();
-                            progressDialog.setMessage("Uploaded " + ((int) progress) + "%...");
+                            progressDialog.setTitle("Actualizando plataforma");
+                            progressDialog.setMessage("Cargando " + ((int) progress) + "%...");
                         }
                     });
         } else {

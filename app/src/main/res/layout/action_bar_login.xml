@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="?attr/actionBarSize"
     android:background="#009641"
+    android:elevation="5dp"
     android:minHeight="?attr/actionBarSize">
 
     <LinearLayout
